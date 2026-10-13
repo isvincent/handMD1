@@ -121,4 +121,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [2-1 河流地形](/@USERNAME/geo-ch4-05)　｜　➡️ [2-3 冰河作用與冰河地形](/@USERNAME/geo-ch4-07)
+⬅️ [2-1 河流地形](/isvincent/geo-ch4-05)　｜　➡️ [2-3 冰河作用與冰河地形](/isvincent/geo-ch4-07)

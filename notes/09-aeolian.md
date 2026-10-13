@@ -95,4 +95,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [學生活動 4-2](/@USERNAME/geo-ch4-08)　｜　➡️ [3-2 海水作用與海岸地形](/@USERNAME/geo-ch4-10)
+⬅️ [學生活動 4-2](/isvincent/geo-ch4-08)　｜　➡️ [3-2 海水作用與海岸地形](/isvincent/geo-ch4-10)

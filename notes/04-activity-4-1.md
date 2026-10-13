@@ -39,4 +39,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [1-2 外營力與交互作用](/@USERNAME/geo-ch4-03)　｜　➡️ [2-1 陸地上的流水與河流地形](/@USERNAME/geo-ch4-05)
+⬅️ [1-2 外營力與交互作用](/isvincent/geo-ch4-03)　｜　➡️ [2-1 陸地上的流水與河流地形](/isvincent/geo-ch4-05)

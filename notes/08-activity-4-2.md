@@ -52,4 +52,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [2-3 冰河地形](/@USERNAME/geo-ch4-07)　｜　➡️ [3-1 風力作用與風成地形](/@USERNAME/geo-ch4-09)
+⬅️ [2-3 冰河地形](/isvincent/geo-ch4-07)　｜　➡️ [3-1 風力作用與風成地形](/isvincent/geo-ch4-09)

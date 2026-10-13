@@ -41,4 +41,4 @@ lang: zh-tw
 :::
 
 ---
-⬅️ [3-2 海岸地形](/@USERNAME/geo-ch4-10)　｜　➡️ [地理探究：地形與人類生活](/@USERNAME/geo-ch4-12)
+⬅️ [3-2 海岸地形](/isvincent/geo-ch4-10)　｜　➡️ [地理探究：地形與人類生活](/isvincent/geo-ch4-12)

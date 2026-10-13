@@ -126,4 +126,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [3-1 風成地形](/@USERNAME/geo-ch4-09)　｜　➡️ [學生活動 4-3 桃園海岸的變遷](/@USERNAME/geo-ch4-11)
+⬅️ [3-1 風成地形](/isvincent/geo-ch4-09)　｜　➡️ [學生活動 4-3 桃園海岸的變遷](/isvincent/geo-ch4-11)

@@ -124,4 +124,4 @@ flowchart LR
 - [國家災害防救科技中心　災害潛勢地圖](https://dmap.ncdr.nat.gov.tw/)
 
 ---
-⬅️ [學生活動 4-3](/@USERNAME/geo-ch4-11)　｜　➡️ [總複習](/@USERNAME/geo-ch4-13)
+⬅️ [學生活動 4-3](/isvincent/geo-ch4-11)　｜　➡️ [總複習](/isvincent/geo-ch4-13)

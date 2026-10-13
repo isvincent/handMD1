@@ -120,4 +120,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [2-2 岩溶地形](/@USERNAME/geo-ch4-06)　｜　➡️ [學生活動 4-2 地形系統運作](/@USERNAME/geo-ch4-08)
+⬅️ [2-2 岩溶地形](/isvincent/geo-ch4-06)　｜　➡️ [學生活動 4-2 地形系統運作](/isvincent/geo-ch4-08)

@@ -216,4 +216,4 @@ flowchart TB
 :::
 
 ---
-⬅️ [0. 導論](/@USERNAME/geo-ch4-01)　｜　➡️ [1-2 外營力與交互作用](/@USERNAME/geo-ch4-03)
+⬅️ [0. 導論](/isvincent/geo-ch4-01)　｜　➡️ [1-2 外營力與交互作用](/isvincent/geo-ch4-03)

@@ -115,4 +115,4 @@ flowchart TB
 :::
 
 ---
-⬅️ [地理探究](/@USERNAME/geo-ch4-12)　｜　🏠 [回到書本目錄](/@USERNAME/geo-ch4)
+⬅️ [地理探究](/isvincent/geo-ch4-12)　｜　🏠 [回到書本目錄](/isvincent/geo-ch4)

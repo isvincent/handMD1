@@ -68,4 +68,4 @@ flowchart LR
 ```
 
 ---
-➡️ 下一篇：[1-1 地形系統與營力：內營力](/@USERNAME/geo-ch4-02)
+➡️ 下一篇：[1-1 地形系統與營力：內營力](/isvincent/geo-ch4-02)

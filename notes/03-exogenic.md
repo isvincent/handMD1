@@ -137,4 +137,4 @@ flowchart LR
 :::
 
 ---
-⬅️ [1-1 內營力](/@USERNAME/geo-ch4-02)　｜　➡️ [學生活動 4-1 女王頭的歲月痕跡](/@USERNAME/geo-ch4-04)
+⬅️ [1-1 內營力](/isvincent/geo-ch4-02)　｜　➡️ [學生活動 4-1 女王頭的歲月痕跡](/isvincent/geo-ch4-04)

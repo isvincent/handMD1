@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>地形系統｜高中地理</title>
+<meta name="description" content="高中地理第4章「地形系統」數位教材：內營力、外營力、河流、岩溶、冰河、風成與海岸地形，搭配 HackMD 書本模式閱讀。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ee; --surface:#ffffff; --surface-2:#efe9de; --ink:#22201c; --ink-2:#5b554b; --line:#ddd4c4;
+  --brand:#b4541f; --brand-2:#2f6f62; --brand-ink:#ffffff;
+  --info-bg:#e7f0fb; --info-line:#3b74c4; --ok-bg:#e6f4ea; --ok-line:#2f8a4c; --warn-bg:#fdf3dc; --warn-line:#c48a12; --danger-bg:#fbe6e4; --danger-line:#c0392b;
+  --shadow:0 1px 2px rgba(0,0,0,.06),0 6px 20px rgba(60,40,10,.07);
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16140f; --surface:#211e18; --surface-2:#2b2720; --ink:#efe9de; --ink-2:#b8af9f; --line:#3a352c;
+    --brand:#e58a52; --brand-2:#6cc0ac; --brand-ink:#1a1712;
+    --info-bg:#1b2a3d; --info-line:#6ea3e8; --ok-bg:#183024; --ok-line:#5cc283; --warn-bg:#352b14; --warn-line:#e2b24a; --danger-bg:#3a1e1b; --danger-line:#ef7a6c;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16140f; --surface:#211e18; --surface-2:#2b2720; --ink:#efe9de; --ink-2:#b8af9f; --line:#3a352c;
+  --brand:#e58a52; --brand-2:#6cc0ac; --brand-ink:#1a1712;
+  --info-bg:#1b2a3d; --info-line:#6ea3e8; --ok-bg:#183024; --ok-line:#5cc283; --warn-bg:#352b14; --warn-line:#e2b24a; --danger-bg:#3a1e1b; --danger-line:#ef7a6c;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brand)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.logo{font-weight:900;letter-spacing:.04em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:8px}
+.logo b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--brand);color:var(--brand-ink);font-size:15px}
+nav.links{margin-left:auto;display:flex;gap:4px;align-items:center}
+nav.links a{color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:8px;font-size:15px}
+nav.links a:hover{background:var(--surface-2);color:var(--ink)}
+.icon-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;height:34px;min-width:34px;cursor:pointer;font-size:15px}
+@media (max-width:640px){nav.links a.hide-sm{display:none}}
+
+/* hero */
+.hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.hero .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--brand-2);border:1px solid var(--line);padding:3px 10px;border-radius:99px;background:var(--surface)}
+.hero h1{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(36px,7vw,64px);line-height:1.15;margin:14px 0 10px}
+.hero h1 span{color:var(--brand)}
+.hero p.lead{font-size:clamp(16px,2.2vw,19px);color:var(--ink-2);max-width:640px;margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:700;text-decoration:none;border:1px solid transparent;cursor:pointer;font-size:16px}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.hero-art{position:absolute;right:-40px;bottom:-10px;width:min(520px,60vw);opacity:.9;pointer-events:none}
+@media (max-width:760px){.hero-art{opacity:.18;right:-80px}}
+
+/* flow strip */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 8px}
+.flow div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.flow h3{margin:0 0 4px;font-size:15px;color:var(--brand-2);letter-spacing:.06em}
+.flow p{margin:0;color:var(--ink-2);font-size:15px}
+@media (max-width:640px){.flow{grid-template-columns:1fr}}
+
+section.block{padding:36px 0}
+section.block > .wrap > h2{font-family:"Noto Serif TC",serif;font-size:clamp(24px,4vw,32px);margin:0 0 6px}
+section.block > .wrap > p.sub{color:var(--ink-2);margin:0 0 22px}
+
+/* chapters */
+.part{margin:0 0 26px}
+.part h3{display:flex;align-items:center;gap:10px;font-size:18px;margin:0 0 12px}
+.part h3 .tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;background:var(--surface-2);color:var(--ink-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.card .no{font-size:13px;font-weight:700;color:var(--brand)}
+.card h4{margin:0;font-size:17px;line-height:1.4}
+.card p{margin:0;color:var(--ink-2);font-size:14px;flex:1}
+.card .acts{display:flex;gap:8px;margin-top:8px}
+.card .acts a{font-size:14px;font-weight:700;text-decoration:none;padding:5px 10px;border-radius:8px;border:1px solid var(--line);color:var(--ink)}
+.card .acts a.read{background:var(--brand-2);border-color:var(--brand-2);color:var(--brand-ink)}
+.card.activity{border-style:dashed}
+
+/* how-to */
+.steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.steps li{list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 16px 56px;position:relative;box-shadow:var(--shadow)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:900;font-size:14px}
+.steps{padding:0;margin:0}
+code{font-family:ui-monospace,Consolas,monospace;background:var(--surface-2);padding:1px 6px;border-radius:6px;font-size:.92em}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--ink-2);font-size:14px}
+
+/* reader */
+#reader{display:none}
+body.reading #home{display:none}
+body.reading #reader{display:block}
+.reader-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;padding:24px 0 60px}
+.toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px}
+.toc a{display:block;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--ink-2);font-size:14px;line-height:1.45}
+.toc a.on{background:var(--brand);color:var(--brand-ink);font-weight:700}
+.toc a:hover:not(.on){background:var(--surface-2)}
+.toc .grp{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--brand-2);margin:10px 10px 4px}
+.toc summary{cursor:pointer;font-weight:700;padding:4px 10px;list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+@media (min-width:861px){.toc summary{pointer-events:none}}
+@media (max-width:860px){.reader-layout{grid-template-columns:1fr;gap:14px}.toc{position:static;max-height:none}.toc summary::after{content:" ▾";color:var(--ink-2)}}
+article.md{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,4vw,40px);box-shadow:var(--shadow);min-width:0}
+.md h1{font-family:"Noto Serif TC",serif;font-size:clamp(26px,4.5vw,36px);line-height:1.3;margin:0 0 16px}
+.md h2{font-size:24px;margin:34px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.md h3{font-size:19px;margin:26px 0 10px}
+.md h4{font-size:17px;margin:20px 0 8px}
+.md table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15px;display:block;overflow-x:auto}
+.md th,.md td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.md th{background:var(--surface-2)}
+.md blockquote{margin:14px 0;padding:8px 16px;border-left:4px solid var(--brand);background:var(--surface-2);border-radius:0 10px 10px 0;color:var(--ink-2)}
+.md hr{border:0;border-top:1px dashed var(--line);margin:28px 0}
+.md img{max-width:100%}
+.md ul.contains-task-list,.md li.task-list-item{list-style:none}
+.md .alert{border-left:5px solid;border-radius:10px;padding:12px 16px;margin:16px 0}
+.md .alert > :first-child{margin-top:0}.md .alert > :last-child{margin-bottom:0}
+.md .alert.info{background:var(--info-bg);border-color:var(--info-line)}
+.md .alert.success{background:var(--ok-bg);border-color:var(--ok-line)}
+.md .alert.warning{background:var(--warn-bg);border-color:var(--warn-line)}
+.md .alert.danger{background:var(--danger-bg);border-color:var(--danger-line)}
+.md details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0;background:var(--surface-2)}
+.md details summary{cursor:pointer;font-weight:700}
+.md details[open] summary{margin-bottom:8px}
+.md pre.mermaid{background:transparent;text-align:center;overflow-x:auto;margin:16px 0}
+.md pre:not(.mermaid){background:var(--surface-2);padding:12px;border-radius:10px;overflow-x:auto}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:24px;flex-wrap:wrap}
+.loading{color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><b>4</b>地形系統</a>
+    <nav class="links">
+      <a href="#chapters" class="hide-sm">章節</a>
+      <a href="#howto" class="hide-sm">使用方式</a>
+      <a id="navBook" href="#" target="_blank" rel="noopener">HackMD 書本</a>
+      <button class="icon-btn" id="themeBtn" title="切換深淺色" aria-label="切換深淺色">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">高中地理・第 4 章</span>
+      <h1>讀懂地表的<br><span>地形系統</span></h1>
+      <p class="lead">從板塊擠壓到一滴雨水，從女王頭到外傘頂洲——用「投入 → 作用 → 產出」的系統觀點，看懂地形怎麼形成、如何改變，又怎樣影響我們的生活。</p>
+      <div class="cta">
+        <a class="btn primary" id="heroBook" href="#" target="_blank" rel="noopener">📘 開啟 HackMD 書本</a>
+        <a class="btn ghost" href="#/read/geo-ch4-01">📖 在本站直接閱讀</a>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 520 260" aria-hidden="true">
+      <defs>
+        <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity=".9"/><stop offset="1" stop-color="var(--brand)" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand-2)" stop-opacity=".85"/><stop offset="1" stop-color="var(--brand-2)" stop-opacity=".3"/></linearGradient>
+      </defs>
+      <path d="M0 260 L90 120 L140 170 L230 40 L300 150 L350 110 L430 190 L520 150 L520 260Z" fill="url(#m1)"/>
+      <path d="M0 260 L60 200 L130 220 L210 160 L290 215 L380 175 L460 225 L520 205 L520 260Z" fill="url(#m2)"/>
+      <path d="M215 62 L230 40 L246 66 L236 60 L228 70 Z" fill="var(--surface)" opacity=".9"/>
+      <path d="M0 250 C80 240 120 255 200 246 S360 236 520 248" stroke="var(--surface)" stroke-width="5" fill="none" opacity=".7"/>
+    </svg>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="flow">
+        <div><h3>投入｜營力</h3><p>地球內部熱能驅動內營力；太陽輻射與重力驅動外營力。</p></div>
+        <div><h3>作用｜過程</h3><p>褶曲、斷層、火山；風化、崩壞、侵蝕、搬運、堆積。</p></div>
+        <div><h3>產出｜地形</h3><p>河流、岩溶、冰河、風成、海岸地形——以及資源與災害。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="chapters">
+    <div class="wrap">
+      <h2>章節目錄</h2>
+      <p class="sub">每篇都可以「在本站閱讀」，或前往 HackMD 書本中的同一篇（需先完成 HackMD 發布設定）。</p>
+      <div id="parts"></div>
+    </div>
+  </section>
+
+  <section class="block" id="howto">
+    <div class="wrap">
+      <h2>使用方式</h2>
+      <p class="sub">學生、老師各取所需。</p>
+      <ol class="steps">
+        <li><b>學生</b>：依序閱讀各節，遇到「🗺️ 線上踏查」就點開地圖親眼看看；「💡 參考答案」先自己想再展開。</li>
+        <li><b>課堂活動</b>：三個學生活動與「地名裡的地形」可直接投影或分組討論，教師參考答案收在摺疊區塊。</li>
+        <li><b>老師</b>：把 <code>notes/</code> 內的 Markdown 匯入 HackMD，設定自訂連結，即可組成書本模式教材（詳見 README）。</li>
+        <li><b>總複習</b>：用概念圖串起全章，再做自我評量檢核學習成果。</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      本教材為依課綱單元內容重新撰寫的教學筆記，未收錄原課本之文字與圖片。地圖連結使用 Google 地圖。<br>
+      以 <a href="https://hackmd.io/" target="_blank" rel="noopener">HackMD</a> 書本模式與 GitHub Pages 發布。
+    </div>
+  </footer>
+</main>
+
+<main id="reader">
+  <div class="wrap reader-layout">
+    <details class="toc" id="tocBox" open><summary>📚 章節導覽</summary><nav id="toc" aria-label="章節導覽"></nav></details>
+    <div>
+      <article class="md" id="article"><p class="loading">載入中…</p></article>
+      <div class="pager" id="pager"></div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+/* ===== 設定：改成你的 HackMD 帳號或團隊名稱 ===== */
+const HACKMD_USER = "USERNAME";
+const BOOK_SLUG = "geo-ch4";
+/* ================================================ */
+
+const CHAPTERS = [
+  {part:"課程導覽", tag:"導論", items:[
+    {slug:"geo-ch4-01", file:"01-intro.md", no:"0", title:"導論：地形系統與人地關係", desc:"台江內海的故事、學習目標與本章架構"}]},
+  {part:"第一節 地形系統與營力", tag:"§1", items:[
+    {slug:"geo-ch4-02", file:"02-endogenic.md", no:"1-1", title:"地形系統與內營力", desc:"系統運作圖、褶曲、斷層、火山（侵入式／寧靜式／猛烈式）"},
+    {slug:"geo-ch4-03", file:"03-exogenic.md", no:"1-2", title:"外營力與交互作用", desc:"物理與化學風化、四種崩壞、差異侵蝕、八卦台地"},
+    {slug:"geo-ch4-04", file:"04-activity-4-1.md", no:"活動 4-1", title:"女王頭的歲月痕跡", desc:"蕈狀岩的形成與保存的兩難", activity:true}]},
+  {part:"第二節 流水、冰河塑造的地形與辨識", tag:"§2", items:[
+    {slug:"geo-ch4-05", file:"05-fluvial.md", no:"2-1", title:"陸地上的流水與河流地形", desc:"峽谷、瀑布、沖積扇、氾濫平原、三角洲、曲流、河階"},
+    {slug:"geo-ch4-06", file:"06-karst.md", no:"2-2", title:"岩溶作用與岩溶地形", desc:"滲穴到殘丘、鐘乳石與石筍、泰國洞穴救援"},
+    {slug:"geo-ch4-07", file:"07-glacial.md", no:"2-3", title:"冰河作用與冰河地形", desc:"冰斗、角峰、U 型谷、峽灣、冰磧、外洗平原、黃土"},
+    {slug:"geo-ch4-08", file:"08-activity-4-2.md", no:"活動 4-2", title:"地形系統運作（屏東平原）", desc:"潮州斷層、隘寮溪築堤與東港溪口海岸後退", activity:true}]},
+  {part:"第三節 風、波浪塑造的地形與辨識", tag:"§3", items:[
+    {slug:"geo-ch4-09", file:"09-aeolian.md", no:"3-1", title:"風力作用與風成地形", desc:"礫漠、岩漠、三種沙丘、黃土高原"},
+    {slug:"geo-ch4-10", file:"10-coastal.md", no:"3-2", title:"海水作用與海岸地形", desc:"海蝕與海積地形、離水與沉水海岸"},
+    {slug:"geo-ch4-11", file:"11-activity-4-3.md", no:"活動 4-3", title:"桃園海岸的變遷", desc:"從碉堡看海岸後退", activity:true}]},
+  {part:"地理探究與總複習", tag:"探究", items:[
+    {slug:"geo-ch4-12", file:"12-inquiry.md", no:"探究", title:"地形與人類生活", desc:"地形變遷、突堤效應、地名裡的地形"},
+    {slug:"geo-ch4-13", file:"13-review.md", no:"複習", title:"概念圖、名詞索引與自我評量", desc:"判讀口訣與 8 題自我評量"}]}
+];
+const ALL = CHAPTERS.flatMap(p => p.items);
+const bySlug = Object.fromEntries(ALL.map(c => [c.slug, c]));
+const hackmdUrl = slug => `https://hackmd.io/@${HACKMD_USER}/${slug}`;
+const bookUrl = `https://hackmd.io/@${HACKMD_USER}/${BOOK_SLUG}`;
+
+/* theme toggle */
+(function(){
+  const root = document.documentElement;
+  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch(e){}
+  document.getElementById("themeBtn").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch(e){}
+    if (document.body.classList.contains("reading")) route();
+  });
+})();
+
+/* home */
+document.getElementById("navBook").href = bookUrl;
+document.getElementById("heroBook").href = bookUrl;
+document.getElementById("parts").innerHTML = CHAPTERS.map(p => `
+  <div class="part">
+    <h3><span class="tag">${p.tag}</span>${p.part}</h3>
+    <div class="grid">${p.items.map(c => `
+      <div class="card${c.activity ? " activity" : ""}">
+        <span class="no">${c.no}</span>
+        <h4>${c.title}</h4>
+        <p>${c.desc}</p>
+        <div class="acts">
+          <a class="read" href="#/read/${c.slug}">在本站閱讀</a>
+          <a href="${hackmdUrl(c.slug)}" target="_blank" rel="noopener">HackMD ↗</a>
+        </div>
+      </div>`).join("")}
+    </div>
+  </div>`).join("");
+
+/* reader */
+document.getElementById("toc").innerHTML = CHAPTERS.map(p =>
+  `<div class="grp">${p.part}</div>` + p.items.map(c =>
+    `<a href="#/read/${c.slug}" data-slug="${c.slug}">${c.no}　${c.title}</a>`).join("")
+).join("");
+
+function hackmdToHtmlReady(md){
+  md = md.replace(/^---[\s\S]*?\n---\s*\n/, "");          // YAML front matter
+  md = md.replace(/^\[TOC\]\s*$/gm, "");                     // HackMD TOC marker
+  md = md.replace(/^:::spoiler\s*(.*)$/gm, (_, t) => `<details><summary>${t || "展開"}</summary>\n`);
+  md = md.replace(/^:::(info|success|warning|danger)\s*$/gm, (_, k) => `<div class="alert ${k}">\n`);
+  // close tags: track a stack so ::: closes the right element
+  const out = [], stack = [];
+  for (const line of md.split("\n")) {
+    if (line.startsWith("<details>")) { stack.push("</details>"); out.push(line); continue; }
+    if (line.startsWith('<div class="alert')) { stack.push("</div>"); out.push(line); continue; }
+    if (/^:::\s*$/.test(line)) { out.push("", stack.pop() || ""); continue; }
+    out.push(line);
+  }
+  md = out.join("\n");
+  // HackMD book links -> in-site reader
+  md = md.replace(/\]\(\/@USERNAME\/(geo-ch4(?:-\d+)?)\)/g, (_, s) => s === BOOK_SLUG ? "](#chapters)" : `](#/read/${s})`);
+  return md;
+}
+
+const renderer = new marked.Renderer();
+const baseCode = renderer.code.bind(renderer);
+renderer.code = function(code, lang){
+  const text = typeof code === "object" ? code.text : code;
+  const l = typeof code === "object" ? code.lang : lang;
+  if (l === "mermaid") return `<pre class="mermaid">${text.replace(/</g,"&lt;")}</pre>`;
+  return baseCode.apply(this, arguments);
+};
+marked.use({ renderer, gfm:true, breaks:false });
+
+let mermaidTheme = null;
+function initMermaid(){
+  const root = document.documentElement;
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = dark ? "dark" : "default";
+  if (theme !== mermaidTheme) { mermaid.initialize({ startOnLoad:false, theme, securityLevel:"strict", fontFamily:"Noto Sans TC, sans-serif" }); mermaidTheme = theme; }
+}
+
+const cache = {};
+async function load(slug){
+  const c = bySlug[slug];
+  const art = document.getElementById("article");
+  if (!c) { art.innerHTML = "<p>找不到這一篇。</p>"; return; }
+  document.querySelectorAll(".toc a").forEach(a => a.classList.toggle("on", a.dataset.slug === slug));
+  document.getElementById("tocBox").open = innerWidth > 860;
+  art.innerHTML = '<p class="loading">載入中…</p>';
+  try {
+    if (!cache[slug]) {
+      const r = await fetch("notes/" + c.file);
+      if (!r.ok) throw new Error(r.status);
+      cache[slug] = await r.text();
+    }
+    art.innerHTML = marked.parse(hackmdToHtmlReady(cache[slug]));
+    art.querySelectorAll('a[href^="http"]').forEach(a => { a.target = "_blank"; a.rel = "noopener"; });
+    art.querySelectorAll('input[type="checkbox"]').forEach(i => i.disabled = false);
+    initMermaid();
+    try { await mermaid.run({ nodes: art.querySelectorAll("pre.mermaid") }); } catch(e) { console.warn(e); }
+    document.title = c.title + "｜地形系統";
+  } catch (e) {
+    art.innerHTML = `<p>無法載入 <code>notes/${c.file}</code>。若你是直接用瀏覽器開啟本機檔案，請改用 GitHub Pages 或本機伺服器（例如 <code>python -m http.server</code>）。</p>`;
+  }
+  const i = ALL.indexOf(c), prev = ALL[i-1], next = ALL[i+1];
+  document.getElementById("pager").innerHTML =
+    (prev ? `<a class="btn ghost" href="#/read/${prev.slug}">← ${prev.title}</a>` : `<a class="btn ghost" href="#chapters">← 回到目錄</a>`) +
+    `<a class="btn ghost" href="${hackmdUrl(c.slug)}" target="_blank" rel="noopener">在 HackMD 開啟 ↗</a>` +
+    (next ? `<a class="btn primary" href="#/read/${next.slug}">${next.title} →</a>` : `<a class="btn primary" href="#chapters">回到目錄 ↺</a>`);
+  window.scrollTo({ top: 0 });
+}
+
+function route(){
+  const m = location.hash.match(/^#\/read\/([\w-]+)/);
+  if (m) { document.body.classList.add("reading"); load(m[1]); }
+  else {
+    document.body.classList.remove("reading"); document.title = "地形系統｜高中地理";
+    const el = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (el) el.scrollIntoView(); else window.scrollTo({ top: 0 });
+  }
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
